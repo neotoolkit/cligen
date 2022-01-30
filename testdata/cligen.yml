@@ -1,0 +1,6 @@
+name: "cli"
+commands:
+  - name: "first command"
+    description: "first command description"
+  - name: "second command"
+    description: "second command description"
