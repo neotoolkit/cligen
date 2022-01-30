@@ -1,0 +1,21 @@
+func Run () error {
+    cmds := []acmd.Command{
+        {{with .Commands -}}
+        {{range . -}}
+        {
+            Name:        "{{.Name}}",
+            Description: "{{.Description}}",
+            Do: func(ctx context.Context, args []string) error {
+                return nil
+            },
+        },
+        {{end -}}
+        {{end}}
+    }
+
+    r := acmd.RunnerOf(cmds, acmd.Config{
+        AppName: "{{.Name}}",
+    })
+
+    return r.Run()
+}
