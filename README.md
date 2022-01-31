@@ -12,7 +12,7 @@ Description
 
 ## Installation
 ```shell
-go install github.com/go-dummy/cligen@latest
+go install github.com/go-dummy/cligen/cmd/cligen@latest
 ```
 
 ## Usage
