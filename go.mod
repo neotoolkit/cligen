@@ -3,7 +3,6 @@ module github.com/go-dummy/cligen
 go 1.17
 
 require (
-	github.com/cristalhq/acmd v0.5.5
 	github.com/goccy/go-yaml v1.9.5
 	github.com/stretchr/testify v1.7.0
 )
