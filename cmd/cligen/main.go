@@ -1,6 +1,7 @@
 package main
 
 import (
+	"embed"
 	"log"
 	"os"
 	"text/template"
@@ -8,8 +9,11 @@ import (
 	"github.com/go-dummy/cligen"
 )
 
+//go:embed tmpl/*
+var tmpl embed.FS
+
 func main() {
-	t, err := template.ParseFiles("tmpl/acmd.tmpl")
+	t, err := template.ParseFS(tmpl, "tmpl/acmd.tmpl")
 	if err != nil {
 		log.Fatalln(err)
 	}
