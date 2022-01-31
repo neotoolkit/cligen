@@ -35,16 +35,16 @@ See [these docs][pkg-url].
 
 [MIT License](LICENSE).
 
-[build-img]: https://github.com/go-dummy/tmp/workflows/build/badge.svg
-[build-url]: https://github.com/go-dummy/tmp/actions
-[pkg-img]: https://pkg.go.dev/badge/go-dummy/tmp
-[pkg-url]: https://pkg.go.dev/github.com/go-dummy/tmp
-[reportcard-img]: https://goreportcard.com/badge/go-dummy/tmp
-[reportcard-url]: https://goreportcard.com/report/go-dummy/tmp
-[coverage-img]: https://codecov.io/gh/go-dummy/tmp/branch/main/graph/badge.svg
-[coverage-url]: https://codecov.io/gh/go-dummy/tmp
-[version-img]: https://img.shields.io/github/v/release/go-dummy/tmp
-[version-url]: https://github.com/go-dummy/tmp/releases
+[build-img]: https://github.com/go-dummy/cligen/workflows/build/badge.svg
+[build-url]: https://github.com/go-dummy/cligen/actions
+[pkg-img]: https://pkg.go.dev/badge/go-dummy/cligen
+[pkg-url]: https://pkg.go.dev/github.com/go-dummy/cligen
+[reportcard-img]: https://goreportcard.com/badge/go-dummy/cligen
+[reportcard-url]: https://goreportcard.com/report/go-dummy/cligen
+[coverage-img]: https://codecov.io/gh/go-dummy/cligen/branch/main/graph/badge.svg
+[coverage-url]: https://codecov.io/gh/go-dummy/cligen
+[version-img]: https://img.shields.io/github/v/release/go-dummy/cligen
+[version-url]: https://github.com/go-dummy/cligen/releases
 
 ## Sponsors
 <p>
