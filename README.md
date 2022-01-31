@@ -16,7 +16,7 @@ go install github.com/go-dummy/cligen/cmd/cligen@latest
 ```
 
 ## Usage
-cligen.yml
+.cligen.yml
 ```yaml
 name: "cli"
 commands:
