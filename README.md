@@ -12,12 +12,19 @@ Description
 
 ## Installation
 ```shell
-
+go install github.com/go-dummy/cligen@latest
 ```
 
 ## Usage
-```go
-
+cligen.yml
+```yaml
+name: "cli"
+commands:
+  - name: "command"
+    description: "command description"
+```
+```shell
+cligen
 ```
 
 ## Documentation
