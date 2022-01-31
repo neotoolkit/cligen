@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	t, err := template.ParseFiles("./tmpl/acmd.tmpl")
+	t, err := template.ParseFiles("tmpl/acmd.tmpl")
 	if err != nil {
 		log.Fatalln(err)
 	}
