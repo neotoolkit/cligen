@@ -9,7 +9,7 @@ import (
 	"github.com/go-dummy/cligen"
 )
 
-//go:embed tmpl/*
+//go:embed tmpl/*.tmpl
 var tmpl embed.FS
 
 func main() {
