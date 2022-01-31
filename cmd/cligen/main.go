@@ -19,7 +19,7 @@ func main() {
 		log.Fatalln(err)
 	}
 
-	api, err := cligen.Parse("./cligen.yml")
+	api, err := cligen.Parse("./.cligen.yml")
 	if err != nil {
 		log.Fatalln(err)
 	}

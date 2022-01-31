@@ -7,7 +7,7 @@ import (
 )
 
 func TestParse(t *testing.T) {
-	got, err := cligen.Parse("./testdata/cligen.yml")
+	got, err := cligen.Parse("./testdata/.cligen.yml")
 	if err != nil {
 		t.Fatal(err)
 	}
