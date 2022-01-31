@@ -10,10 +10,10 @@ import (
 )
 
 //go:embed tmpl/*.tmpl
-var tmpl embed.FS
+var fs embed.FS
 
 func main() {
-	t, err := template.ParseFS(tmpl, "tmpl/acmd.tmpl")
+	t, err := template.ParseFS(fs, "tmpl/acmd.tmpl")
 	if err != nil {
 		log.Fatalln(err)
 	}
