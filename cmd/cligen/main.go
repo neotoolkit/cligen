@@ -7,7 +7,7 @@ import (
 	"os"
 	"text/template"
 
-	"github.com/go-dummy/cligen"
+	"github.com/neotoolkit/cligen"
 )
 
 //go:embed tmpl/*.tmpl

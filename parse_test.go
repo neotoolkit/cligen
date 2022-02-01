@@ -1,7 +1,7 @@
 package cligen_test
 
 import (
-	"github.com/go-dummy/cligen"
+	"github.com/neotoolkit/cligen"
 	"github.com/stretchr/testify/require"
 	"testing"
 )

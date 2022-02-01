@@ -1,4 +1,4 @@
-module github.com/go-dummy/cligen
+module github.com/neotoolkit/cligen
 
 go 1.17
 
