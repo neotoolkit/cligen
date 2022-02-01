@@ -1,11 +1,12 @@
 package cligen
 
 type API struct {
-	Name     string
-	Commands []Command
+	Name     string    `json:"name" yaml:"name"`
+	Commands []Command `json:"commands" yaml:"commands"`
 }
 
 type Command struct {
-	Name        string
-	Description string
+	Name        string `json:"name" yaml:"name"`
+	Alias       string `json:"alias" yaml:"alias"`
+	Description string `json:"description" yaml:"description"`
 }

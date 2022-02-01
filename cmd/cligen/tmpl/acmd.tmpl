@@ -12,6 +12,7 @@ func Run () error {
         {{range . -}}
         {
             Name:        "{{.Name}}",
+            Alias:       "{{.Alias}}",
             Description: "{{.Description}}",
             Do: func(ctx context.Context, args []string) error {
                 return nil
