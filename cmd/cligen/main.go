@@ -2,6 +2,7 @@ package main
 
 import (
 	"embed"
+	"flag"
 	"log"
 	"os"
 	"text/template"
@@ -13,7 +14,12 @@ import (
 var fs embed.FS
 
 func main() {
-	t, err := template.ParseFS(fs, "tmpl/acmd.tmpl")
+	var cli string
+	flag.StringVar(&cli, "cli", "acmd", "")
+
+	flag.Parse()
+
+	t, err := template.ParseFS(fs, "tmpl/"+cli+".tmpl")
 	if err != nil {
 		log.Fatalln(err)
 	}
