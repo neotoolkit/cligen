@@ -1,6 +1,8 @@
 name: "cli"
 commands:
   - name: "first command"
+    alias: "fc"
     description: "first command description"
   - name: "second command"
+    alias: "sc"
     description: "second command description"
