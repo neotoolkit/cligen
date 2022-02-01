@@ -1,4 +1,4 @@
-# README
+# cligen
 
 [![build-img]][build-url]
 [![pkg-img]][pkg-url]
@@ -6,7 +6,7 @@
 [![coverage-img]][coverage-url]
 [![version-img]][version-url]
 
-Description
+Generate CLI app skeleton
 
 ## Features
 
@@ -21,6 +21,7 @@ go install github.com/go-dummy/cligen/cmd/cligen@latest
 name: "cli"
 commands:
   - name: "command"
+    alias: "c"
     description: "command description"
 ```
 ```shell
