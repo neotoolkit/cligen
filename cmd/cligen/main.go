@@ -26,6 +26,10 @@ func main() {
 		log.Fatalln(err)
 	}
 
+	if err := cligen.Validate(api.Commands); err != nil {
+		log.Fatalln(err)
+	}
+
 	if err := t.Execute(f, api); err != nil {
 		log.Fatalln(err)
 	}
