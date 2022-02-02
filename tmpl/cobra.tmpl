@@ -1,0 +1,34 @@
+package app
+
+import (
+	"github.com/spf13/cobra"
+)
+
+{{with .Commands -}}
+{{range . -}}
+func {{.Name}}Cmd() *cobra.Command {
+    return &cobra.Command{
+       Use: "{{.Name}}",
+       Aliases: []string{"{{.Alias}}"},
+       Long: `{{.Description}}`,
+       Run: func(cmd *cobra.Command, args []string) {},
+    }
+}
+{{end -}}
+{{end}}
+
+func Run() error {
+	rootCmd := &cobra.Command{
+		Use:  "{{.Name}}",
+	}
+
+	rootCmd.AddCommand(
+	    {{with .Commands -}}
+        {{range . -}}
+        {{.Name}}Cmd(),
+        {{end}}
+        {{- end}}
+	)
+
+	return rootCmd.Execute()
+}
