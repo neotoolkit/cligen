@@ -15,12 +15,12 @@ func TestParse(t *testing.T) {
 		Name: "cli",
 		Commands: []cligen.Command{
 			{
-				Name:        "first command",
+				Name:        "first-command",
 				Alias:       "fc",
 				Description: "first command description",
 			},
 			{
-				Name:        "second command",
+				Name:        "second-command",
 				Alias:       "sc",
 				Description: "second command description",
 			},
