@@ -1,17 +1,12 @@
 package main
 
 import (
-	"embed"
 	"flag"
 	"log"
 	"os"
-	"text/template"
 
 	"github.com/neotoolkit/cligen"
 )
-
-//go:embed tmpl/*.tmpl
-var fs embed.FS
 
 func main() {
 	var cli string
@@ -19,10 +14,7 @@ func main() {
 
 	flag.Parse()
 
-	t, err := template.ParseFS(fs, "tmpl/"+cli+".tmpl")
-	if err != nil {
-		log.Fatalln(err)
-	}
+	t := cligen.Template(cli)
 
 	f, err := os.OpenFile("run.go", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
