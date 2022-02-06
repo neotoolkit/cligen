@@ -9,6 +9,7 @@
 Generate CLI app skeleton
 
 ## Features
+- Supports [acmd](https://github.com/cristalhq/acmd), [cobra](https://github.com/spf13/cobra)
 
 ## Installation
 ```shell
