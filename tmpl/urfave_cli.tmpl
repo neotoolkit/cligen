@@ -1,0 +1,36 @@
+package main
+
+import (
+    "github.com/urfave/cli/v2"
+    "log"
+    "os"
+)
+
+var commands = []*cli.Command{
+    {{with .Commands -}}
+    {{range . -}}
+    {
+        Name:    "{{.Name}}",
+        Aliases: []string{"{{.Alias}}"},
+        Description: "{{.Description}}",
+        Usage:   "{{.Description}}",
+        Action: func(c *cli.Context) error {
+            log.Println("Hello,", "{{.Name}}")
+            return nil
+        },
+    },
+    {{end -}}
+    {{end}}
+}
+
+func main() {
+    app := &cli.App{
+        Commands: commands,
+        Name: "{{.Name}}",
+    }
+
+    err := app.Run(os.Args)
+    if err != nil {
+        log.Fatal(err)
+    }
+}
