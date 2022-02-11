@@ -2,11 +2,12 @@ package main
 
 import (
 	"flag"
+	"github.com/neotoolkit/cligen"
 	"log"
 	"os"
-
-	"github.com/neotoolkit/cligen"
 )
+
+const GENERATE_FILE_NAME = "run.go"
 
 func main() {
 	var cli string
@@ -25,12 +26,25 @@ func main() {
 
 	t := cligen.Template(cli)
 
-	f, err := os.OpenFile("run.go", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+	f, err := os.OpenFile(GENERATE_FILE_NAME, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
 	if err != nil {
 		log.Fatalln(err)
 	}
 
-	if err := t.Execute(f, api); err != nil {
+	executeTemplateErr := t.Execute(f, api)
+	fileCloseErr := f.Close()
+
+	if fileCloseErr != nil {
 		log.Fatalln(err)
+	}
+
+	if executeTemplateErr != nil {
+		deleteFileErr := os.Remove(GENERATE_FILE_NAME)
+
+		if deleteFileErr != nil {
+			log.Println(deleteFileErr)
+		}
+
+		log.Fatalln(executeTemplateErr)
 	}
 }
