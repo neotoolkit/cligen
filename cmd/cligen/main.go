@@ -36,7 +36,7 @@ func main() {
 	fileCloseErr := f.Close()
 
 	if fileCloseErr != nil {
-		log.Fatalln(err)
+		log.Fatalln(fileCloseErr)
 	}
 
 	if executeTemplateErr != nil {
