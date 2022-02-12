@@ -31,21 +31,15 @@ func main() {
 	if err != nil {
 		log.Fatalln(err)
 	}
+	defer f.Close()
 
-	executeTemplateErr := t.Execute(f, api)
-	fileCloseErr := f.Close()
-
-	if fileCloseErr != nil {
-		log.Fatalln(fileCloseErr)
-	}
-
-	if executeTemplateErr != nil {
+	if err := t.Execute(f, api); err != nil {
 		deleteFileErr := os.Remove(_generateFileName)
 
 		if deleteFileErr != nil {
 			log.Println(deleteFileErr)
 		}
 
-		log.Fatalln(executeTemplateErr)
+		log.Fatalln(err)
 	}
 }
