@@ -11,11 +11,6 @@ import (
 const _generateFileName = "run.go"
 
 func main() {
-	var cli string
-	flag.StringVar(&cli, "cli", "acmd", "")
-
-	flag.Parse()
-
 	api, err := cligen.Parse("./.cligen.yml")
 	if err != nil {
 		log.Fatalln(err)
@@ -24,6 +19,11 @@ func main() {
 	if err := cligen.Validate(api.Commands); err != nil {
 		log.Fatalln(err)
 	}
+
+	var cli string
+	flag.StringVar(&cli, "cli", "acmd", "")
+
+	flag.Parse()
 
 	t := cligen.Template(cli)
 
